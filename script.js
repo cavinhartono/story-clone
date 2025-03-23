@@ -14,7 +14,6 @@ let storyDuration = 5000; // 5 seconds
 let timer;
 let progressFills = [];
 
-// Default stories (you can remove these if you want user-only uploads)
 let defaultStories = [
   {
     user: "John",
@@ -132,11 +131,11 @@ fileInput.addEventListener("change", (e) => {
 
     localStorage.setItem("userStories", JSON.stringify(localStories));
 
-    titleInput.value = ""; // clear the input field after saving
+    titleInput.value = "";
 
     mergeStories();
     renderStoryList();
-    showStoryGroup(0, 0); // Go to "You"
+    showStoryGroup(0, 0);
   };
 
   reader.readAsDataURL(file);
@@ -255,8 +254,7 @@ function deletePost(postIndex) {
 
     mergeStories();
     renderStoryList();
-
-    // If no posts left, reset
+    
     if (localStories.length === 0) {
       storyContent.innerHTML = `<h2>No Stories Available</h2>`;
       clearTimeout(timer);
@@ -276,7 +274,6 @@ prevBtn.addEventListener("click", () => {
   prevPostInGroup();
 });
 
-// Swipe navigation
 let touchStartX = 0;
 let touchEndX = 0;
 
