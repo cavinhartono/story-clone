@@ -1,4 +1,4 @@
-# Story Clone Like Instagram and WhatsApp
+# Stories Clone Like Instagram
 
 ### Frontend Projects | Roadmap.sh
 
